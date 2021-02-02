@@ -26,10 +26,8 @@ const int ControlMap::PCModule = 1;
 const int ControlMap::FLport = 2;
 const int ControlMap::BLport = 99; // not using 
 
-// Magazine
-const int ControlMap::MagMotorPort1 = 1;
-const int ControlMap::MagMotorPort2 = 8;
-const double ControlMap::MagEncoderSafeZone = 5;
+// Intake
+const int ControlMap::IntakeMotorPort = 99;
 
 // Right Drive
 const int ControlMap::FRport = 6;
@@ -48,7 +46,7 @@ const double ControlMap::Mass = 50; // KG's
 const tAxis ControlMap::DrivetrainLeft{ Driver, XboxController::kLeftYAxis };
 const tAxis ControlMap::DrivetrainRight{ Driver, XboxController::kRightYAxis };
 
-//Washing Machine Magazine
-const tAxis ControlMap::Outake{ CoDriver, XboxController::kRightThrottle };
+// Intake
+const tAxis ControlMap::IntakeOutake{ CoDriver, XboxController::kLeftThrottle };
 
 

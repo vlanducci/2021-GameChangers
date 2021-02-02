@@ -92,14 +92,8 @@ struct RobotMap {
 		wml::Drivetrain drivetrain{drivetrainConfig, gainsVelocity};
 	}; DriveSystem driveSystem;
 
-	//Washing Machine Magazine
-	struct MagazineSystem {
-		wml::TalonSrx magMotor1{ ControlMap::MagMotorPort1, 2048 };
-		wml::VictorSpx magMotor2{ ControlMap::MagMotorPort2 };
-
-		// wml::sensors::DigitalEncoder magEncoder{ 0, 1, 2048 };
-    wml::actuators::MotorVoltageController magMotors = wml::actuators::MotorVoltageController::Group(magMotor1, magMotor2);
-
-		wml::Gearbox magGearbox{ &magMotors, &magMotor1 };
-	}; MagazineSystem magazineSystem;
+	//Intake
+	struct IntakeSystem {
+		wml::TalonSrx intakeMotor{ ControlMap::IntakeMotorPort, 2048 };
+	}; IntakeSystem intakeSystem;
 };

@@ -35,18 +35,15 @@ struct ControlMap {
 	static const double MaxDrivetrainSpeed;
 	static const double TrackWidth, TrackDepth, WheelRadius, Mass;
 
-	//Magazine 
-    static const int MagMotorPort1;
-  	static const int MagMotorPort2;
-  	static const double MagEncoderSafeZone;
-
+	//Intake
+	static const int IntakeMotorPort;
 
 	// ------------------ Controls ------------------
 	
 	// Drivetrain
 	static const wml::controllers::tAxis DrivetrainLeft, DrivetrainRight;
 
-	// Magazine
-	static const wml::controllers::tAxis Outake;
+	// Intake
+	static const wml::controllers::tAxis IntakeOutake;
 
 };

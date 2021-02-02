@@ -3,7 +3,7 @@
 /**
  * Local files (strategies/)
  */ 
-#include "strategies/MagazineStrategies.h"
+#include "strategies/IntakeStrategies.h"
 #include "strategies/DriveSystem.h"
 
 class Robot : public frc::TimedRobot, protected wml::StrategyController, protected wml::NTProvider {
@@ -26,6 +26,6 @@ class Robot : public frc::TimedRobot, protected wml::StrategyController, protect
  private:
 	// Istances
 	RobotMap robotMap;
-	Magazine *magazine;
+	Intake *intake;
 	wml::Drivetrain *drivetrain; // WML drivetrain (Not local)
 };

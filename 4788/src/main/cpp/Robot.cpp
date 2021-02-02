@@ -11,11 +11,7 @@ double dt;
 void Robot::RobotInit() {
   ControlMap::InitsmartControllerGroup(robotMap.contGroup);
 
-  // Magazine
-  magazine = new Magazine(robotMap.magazineSystem.magGearbox);
-  magazine->SetDefault(std::make_shared<MagazineManualStrategy>("Magazine Manual", *magazine, robotMap.contGroup));
-
-
+  
   // Drivebase Stuff
 
 	//Create wml drivetrain
@@ -35,7 +31,6 @@ void Robot::RobotInit() {
 
 	//Register our systems to be called via strategy
 	StrategyController::Register(drivetrain);
-	StrategyController::Register(magazine);
 	NTProvider::Register(drivetrain);
 }
 
@@ -44,7 +39,7 @@ void Robot::RobotPeriodic() {
   dt = currentTimeStamp - lastTimeStamp;
 
   StrategyController::Update(dt);
-  magazine->update(dt);
+  intake->update(dt);
   // NTProvider::Update();
 
   lastTimeStamp = currentTimeStamp;
@@ -60,7 +55,7 @@ void Robot::AutonomousPeriodic() {}
 
 // Manual Robot Logic
 void Robot::TeleopInit() {
-  Schedule(magazine->GetDefaultStrategy(), true);
+  Schedule(intake->GetDefaultStrategy(), true);
 }
 void Robot::TeleopPeriodic() {}
 
